@@ -14,10 +14,6 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
     
-    public CarService(CarRepository carRepository) {
-        this.carRepository = carRepository;
-    }
-
     public Car getCarbyId(Long id){
         return carRepository.findById(id).orElse(null);
     }
