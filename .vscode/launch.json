@@ -9,6 +9,26 @@
             "projectName": "car-service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServiceApplication<eureka-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.rentacar.EurekaServiceApplication",
+            "projectName": "eureka-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RentalServiceApplication<rental-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.rentacar.RentalServiceApplication",
+            "projectName": "rental-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
