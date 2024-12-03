@@ -4,8 +4,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name="car-service")
-public interface CarClient {
-    @GetMapping("/api/cars/find/{id}")
-    CarDTO getCarById(@PathVariable Long id);
+@FeignClient(name="person-service")
+public interface PersonClient {
+    @GetMapping("/api/persons/{id}")
+    PersonDTO getPersonById(@PathVariable Long id);
 }
