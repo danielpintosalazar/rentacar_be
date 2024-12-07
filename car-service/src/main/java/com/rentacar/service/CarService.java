@@ -29,8 +29,8 @@ public class CarService {
     public Car updateCar(Long id, Car car){
         Car existCar = carRepository.findById(id).orElse(null);
         if (existCar != null){
-            existCar.setNombre(car.getNombre());
-            existCar.setMarca(car.getMarca());
+            existCar.setName(car.getName());
+            existCar.setBrand(car.getBrand());
             existCar.setColor(car.getColor());
             return carRepository.save(existCar);
         }
