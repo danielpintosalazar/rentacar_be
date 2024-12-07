@@ -52,4 +52,10 @@ public class PersonController {
         personService.deletePerson(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Person>> getPersonByName(@PathVariable String name) {
+        return ResponseEntity.ok(personService.getPersonByName(name));
+    }
+
 }

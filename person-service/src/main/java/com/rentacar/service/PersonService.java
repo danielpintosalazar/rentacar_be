@@ -28,6 +28,10 @@ public class PersonService {
         return personRepository.findById(id).orElse(null);
     }
 
+    public List<Person> getPersonByName(String name) {
+        return personRepository.findByName(name);
+    }
+
     public Person updatePerson(Long id, Person person) {
         Person existingPerson = getPersonById(id);
         existingPerson.setName(person.getName());
@@ -39,4 +43,7 @@ public class PersonService {
     public void deletePerson(Long id) {
         personRepository.deleteById(id);
     }
+
+
+
 }
