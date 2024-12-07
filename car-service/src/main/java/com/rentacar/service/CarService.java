@@ -18,6 +18,10 @@ public class CarService {
         return carRepository.findById(id).orElse(null);
     }
 
+    public List<Car> getCarByName(String name){
+        return carRepository.findByNameContaining(name);
+    }
+
     public List<Car> getAllCars(){
         return carRepository.findAll();
     }
