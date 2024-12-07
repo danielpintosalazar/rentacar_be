@@ -22,10 +22,10 @@ public class Car {
     private Long id;
 
     @NotEmpty
-    private String nombre;
+    private String name;
 
     @NotEmpty
-    private String marca;
+    private String brand;
 
     @NotEmpty
     private String color;

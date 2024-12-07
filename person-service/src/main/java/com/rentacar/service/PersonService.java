@@ -31,6 +31,8 @@ public class PersonService {
     public Person updatePerson(Long id, Person person) {
         Person existingPerson = getPersonById(id);
         existingPerson.setName(person.getName());
+        existingPerson.setAddress(person.getAddress());
+        existingPerson.setPhone(person.getPhone());
         return personRepository.save(existingPerson);
     }
 
