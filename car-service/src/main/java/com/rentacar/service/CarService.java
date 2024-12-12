@@ -41,8 +41,13 @@ public class CarService {
         return null;
     }
 
-    public void deleteCar(Long id){
-        carRepository.deleteById(id);
+    public boolean deleteCar(Long id){
+        Car existCar = carRepository.findById(id).orElse(null);
+        if (existCar != null){
+            carRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 }
