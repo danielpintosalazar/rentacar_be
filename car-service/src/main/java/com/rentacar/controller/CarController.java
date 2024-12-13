@@ -40,10 +40,24 @@ public class CarController {
         }
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/findByName/{name}")
     public ResponseEntity<?> findByName(@PathVariable String name) {
         try {
             List<Car> cars = carService.getCarByName(name);
+            if (cars != null && !cars.isEmpty()) {
+                return new ResponseEntity<>(cars, HttpStatus.OK);
+            }
+            return new ResponseEntity<>("Elemento no encontrado",HttpStatus.NOT_FOUND);        
+            
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error: " + e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);           
+        }
+    }
+
+    @GetMapping("/findByNameContainig/{name}")
+    public ResponseEntity<?> findByNameContaining(@PathVariable String name) {
+        try {
+            List<Car> cars = carService.getCarByNameContaining(name);
             if (cars != null && !cars.isEmpty()) {
                 return new ResponseEntity<>(cars, HttpStatus.OK);
             }

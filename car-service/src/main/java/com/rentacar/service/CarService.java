@@ -19,6 +19,10 @@ public class CarService {
     }
 
     public List<Car> getCarByName(String name){
+        return carRepository.findByName(name);
+    }
+
+    public List<Car> getCarByNameContaining(String name){
         return carRepository.findByNameContaining(name);
     }
 
