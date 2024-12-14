@@ -28,7 +28,21 @@ public class PersonService {
         return personRepository.findById(id).orElse(null);
     }
 
-    public List<Person> getPersonByName(String name) {
+    /**
+     * Metodo para consultar personas
+     * @param name Cadena de texto que puede estar cintenida en el nombre
+     * @return Objeto persona
+     */
+    public List<Person> findByNameContaining(String name) {
+        return personRepository.findByNameContaining(name);
+    }
+
+    /**
+     * Metodo para consultar personas por el nombre completo
+     * @param name Cadena de texto con en el nombre
+     * @return Objeto persona
+     */
+    public List<Person> findByName(String name) {
         return personRepository.findByName(name);
     }
 
