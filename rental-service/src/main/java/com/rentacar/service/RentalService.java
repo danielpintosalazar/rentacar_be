@@ -27,7 +27,6 @@ public class RentalService {
     }
 
     public Rental createRental(Rental rental) {
-        System.out.println(rental);
         int days = rental.getDays();
         Double price = rental.getPrice();
         rental.setTotal(days * price);
@@ -64,7 +63,7 @@ public class RentalService {
         existingRental.setCar(rental.getCar());
         existingRental.setDays(rental.getDays());
         existingRental.setPrice(rental.getPrice());
-        existingRental.setTotal(rental.getTotal());
+        existingRental.setTotal(rental.getDays() * rental.getPrice());
         return rentalRepository.save(existingRental);
     }
 
