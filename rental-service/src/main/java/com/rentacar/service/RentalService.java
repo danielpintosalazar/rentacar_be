@@ -27,6 +27,7 @@ public class RentalService {
     }
 
     public Rental createRental(Rental rental) {
+        System.out.println(rental);
         int days = rental.getDays();
         Double price = rental.getPrice();
         rental.setTotal(days * price);
